@@ -95,7 +95,6 @@ function createProjectCard(project) {
     return `
         <div class="portfolio-item ${project.category} fade-in">
             <div class="project-card">
-                <img src="${project.image}" alt="${project.title}">
                 <div class="project-content">
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
@@ -106,11 +105,6 @@ function createProjectCard(project) {
                         <a href="${project.github}" target="_blank" class="project-btn">
                             <i class="bi bi-github"></i> View Code
                         </a>
-                        ${project.demo ? `
-                            <a href="${project.demo}" target="_blank" class="project-btn">
-                                <i class="bi bi-box-arrow-up-right"></i> Live Demo
-                            </a>
-                        ` : ''}
                     </div>
                 </div>
             </div>
@@ -120,27 +114,180 @@ function createProjectCard(project) {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // Add your projects data here
     const projects = [
+        // AI/ML Projects
         {
-            title: "AI-Powered Image Recognition",
-            description: "A deep learning model built with TensorFlow that can classify images with 95% accuracy. Implemented transfer learning using ResNet50 architecture.",
-            image: "path/to/project1-image.jpg",
+            title: "ANN (Artificial Neural Network)",
+            description: "Implementation of a custom Artificial Neural Network from scratch.",
             category: "ai-ml",
-            github: "https://github.com/yourusername/image-recognition",
-            demo: "https://demo-link.com",
-            technologies: ["Python", "TensorFlow", "OpenCV", "Flask"]
+            github: "https://github.com/Krupa049/ANN",
+            technologies: ["Python", "NumPy", "TensorFlow"]
         },
         {
-            title: "E-commerce Platform",
-            description: "Full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
-            image: "path/to/project2-image.jpg",
-            category: "web",
-            github: "https://github.com/yourusername/ecommerce",
-            demo: "https://demo-link.com",
-            technologies: ["React", "Node.js", "MongoDB", "Stripe API"]
+            title: "Machine Learning Model",
+            description: "Comprehensive machine learning model implementation with various algorithms.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Machine-Learning-Model",
+            technologies: ["Python", "Scikit-learn", "Pandas"]
         },
-        // Add more projects...
+        {
+            title: "AI Tic-Tac-Toe",
+            description: "AI-powered Tic-Tac-Toe game using minimax algorithm.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/AI-Tic-Tac-Toe",
+            technologies: ["Python", "AI Algorithms"]
+        },
+        {
+            title: "Gaussian Maximum Likelihood",
+            description: "Implementation of Gaussian Maximum Likelihood estimation.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Gaussian_Maximum_Likelihood",
+            technologies: ["Python", "Statistics", "NumPy"]
+        },
+        {
+            title: "Multiple Object Tracking",
+            description: "Real-time multiple object tracking system using computer vision.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Multiple-Object-Tracking",
+            technologies: ["Python", "OpenCV", "Deep Learning"]
+        },
+        {
+            title: "Auto-GPT Implementation",
+            description: "Implementation of autonomous GPT system.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Auto-GPT",
+            technologies: ["Python", "OpenAI", "NLP"]
+        },
+        {
+            title: "Face Recognition System",
+            description: "Advanced face recognition system using deep learning.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Face-Recognition",
+            technologies: ["Python", "OpenCV", "Deep Learning"]
+        },
+        {
+            title: "Micrograd Implementation",
+            description: "Implementation of a tiny autograd engine.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Micrograd",
+            technologies: ["Python", "Deep Learning"]
+        },
+        {
+            title: "MLP From Scratch",
+            description: "Multi-Layer Perceptron implemented from scratch.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/MLP",
+            technologies: ["Python", "Neural Networks"]
+        },
+        {
+            title: "Transformer Model",
+            description: "Implementation of transformer architecture for NLP tasks.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Transformer-Model",
+            technologies: ["Python", "PyTorch", "NLP"]
+        },
+        {
+            title: "Tokenization System",
+            description: "Custom tokenization system for NLP applications.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Tokenization",
+            technologies: ["Python", "NLP"]
+        },
+        {
+            title: "RAG Implementation",
+            description: "Retrieval-Augmented Generation system implementation.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/RAG",
+            technologies: ["Python", "NLP", "Vector Databases"]
+        },
+        {
+            title: "Gradient Descent",
+            description: "Implementation of various gradient descent optimization algorithms.",
+            category: "ai-ml",
+            github: "https://github.com/Krupa049/Gradient-Descent",
+            technologies: ["Python", "Mathematics", "Optimization"]
+        },
+
+        // Web Development Projects
+        {
+            title: "Portfolio Website",
+            description: "Personal portfolio website showcasing projects and skills.",
+            category: "web",
+            github: "https://github.com/Krupa049/Sai-Krupa-Goli",
+            technologies: ["HTML", "CSS", "JavaScript"]
+        },
+        {
+            title: "TODO Application",
+            description: "Feature-rich TODO application with user authentication.",
+            category: "web",
+            github: "https://github.com/Krupa049/TO-DO",
+            technologies: ["React", "Node.js", "MongoDB"]
+        },
+        {
+            title: "AI Platform",
+            description: "Web platform for AI model deployment and testing.",
+            category: "web",
+            github: "https://github.com/Krupa049/AI-Platform",
+            technologies: ["React", "Python", "Flask"]
+        },
+        {
+            title: "Social Network",
+            description: "Full-featured social networking platform.",
+            category: "web",
+            github: "https://github.com/Krupa049/Social-Network",
+            technologies: ["React", "Node.js", "MongoDB"]
+        },
+
+        // Data Engineering/Science Projects
+        {
+            title: "Fraud Detection System",
+            description: "Real-time fraud detection using PySpark and Kafka.",
+            category: "data",
+            github: "https://github.com/Krupa049/Fraud-Detection_PySpark-Kafka",
+            technologies: ["PySpark", "Kafka", "Machine Learning"]
+        },
+        {
+            title: "Image Classification CNN",
+            description: "Image classification using Convolutional Neural Networks.",
+            category: "data",
+            github: "https://github.com/Krupa049/Image-Class-CNN",
+            technologies: ["Python", "TensorFlow", "Deep Learning"]
+        },
+        {
+            title: "Tesla Stock Prediction",
+            description: "Stock price prediction model for Tesla using time series analysis.",
+            category: "data",
+            github: "https://github.com/Krupa049/Tesla-Stock-Prediction",
+            technologies: ["Python", "Time Series", "Machine Learning"]
+        },
+        {
+            title: "Fake News Detection",
+            description: "ML model to detect fake news articles.",
+            category: "data",
+            github: "https://github.com/Krupa049/Fake-News-Detection",
+            technologies: ["Python", "NLP", "Machine Learning"]
+        },
+        {
+            title: "Sentiment Analysis",
+            description: "Text sentiment analysis using advanced NLP techniques.",
+            category: "data",
+            github: "https://github.com/Krupa049/Sentiment-Analysis",
+            technologies: ["Python", "NLP", "Deep Learning"]
+        },
+        {
+            title: "Accuracy Prediction",
+            description: "Model accuracy prediction and optimization system.",
+            category: "data",
+            github: "https://github.com/Krupa049/Accuracy-Prediction",
+            technologies: ["Python", "Machine Learning", "Statistics"]
+        },
+        {
+            title: "Spam Email Detector",
+            description: "Email spam detection system using ML algorithms.",
+            category: "data",
+            github: "https://github.com/Krupa049/Spam-Email-Detector",
+            technologies: ["Python", "NLP", "Machine Learning"]
+        }
     ];
     
     const portfolioGrid = document.querySelector('.portfolio-grid');
